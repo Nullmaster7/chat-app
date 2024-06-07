@@ -4,7 +4,7 @@ const AuthPage = (props) => {
     const onSubmit = (e) => {
         e.preventDefault();
         const { value } = e.target[0];
-        axios.post('http://localhost:3001/authenticate',
+        axios.post('https://chat-app-drab-seven.vercel.app/authenticate',
             { username: value }
         ).then(r => props.onAuth({ ...r.data, secret: value }))
             .catch(e => console.log('error', e))
