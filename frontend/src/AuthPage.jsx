@@ -4,7 +4,7 @@ const AuthPage = (props) => {
     const onSubmit = (e) => {
         e.preventDefault();
         const { value } = e.target[0];
-        axios.post('https://chat-app-frontend-topaz.vercel.app/',
+        axios.post('https://chat-app-frontend-topaz.vercel.app',
             { username: value }
         ).then(r => props.onAuth({ ...r.data, secret: value }))
             .catch(e => console.log('error', e))
